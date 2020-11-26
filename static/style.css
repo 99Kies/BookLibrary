@@ -1,5 +1,6 @@
 body {
-    background: #CAECE9;
+    /*background: #CAECE9;*/
+    background: #073B36;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 14px;
 }
@@ -38,13 +39,13 @@ input[type="submit"] {
 
 div.page {
     background: white;
-    border: 1px solid #6ECCC4;
+    border: 1px solid #073B30;
     width: 700px;
     margin: 30px auto;
 }
 
 div.page h1 {
-    background: #6ECCC4;
+    background: #073B30;
     margin: 0;
     padding: 10px 14px;
     color: white;

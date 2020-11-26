@@ -5,7 +5,7 @@ from hashlib import md5
 from datetime import datetime
 from flask import Flask, request, session, url_for, redirect, \
 	 render_template, abort, g, flash, _app_ctx_stack
-from werkzeug import check_password_hash, generate_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 import time
 
 #CONFIGURATION
@@ -250,7 +250,7 @@ def manager_book(id):
 		db.execute('''delete from borrows where book_id = ? ''' , [id])
 		db.commit()
 		return redirect(url_for('manager_book', id = id))
-	   	return render_template('manager_book.html', book = book, reader = reader)
+		return render_template('manager_book.html', book = book, reader = reader)
 
 @app.route('/manager/user/<id>', methods=['GET', 'POST'])
 def manager_user(id):
@@ -369,7 +369,7 @@ def reader_book(id):
 										   current_time, 'not return'])
 				db.commit()
 				return redirect(url_for('reader_book', id = id))
-	   	return render_template('reader_book.html', book = book, reader = reader, error = error)
+		return render_template('reader_book.html', book = book, reader = reader, error = error)
 
 @app.route('/reader/histroy', methods=['GET', 'POST'])
 def reader_histroy():
