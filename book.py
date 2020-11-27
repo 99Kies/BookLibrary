@@ -156,7 +156,7 @@ def manager_users():
 
 @app.route('/manager/user/modify/<id>', methods=['GET', 'POST'])
 def manger_user_modify(id):
-	user_judge()
+	manager_judge()
 	error = None
 	user = query_db('''select * from users where user_id = ?''', [id], one=True)
 	if request.method == 'POST':
