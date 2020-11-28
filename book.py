@@ -250,7 +250,7 @@ def manager_book(id):
 		db.execute('''delete from borrows where book_id = ? ''' , [id])
 		db.commit()
 		return redirect(url_for('manager_book', id = id))
-		return render_template('manager_book.html', book = book, reader = reader)
+	return render_template('manager_book.html', book = book, reader = reader)
 
 @app.route('/manager/user/<id>', methods=['GET', 'POST'])
 def manager_user(id):
@@ -369,7 +369,7 @@ def reader_book(id):
 										   current_time, 'not return'])
 				db.commit()
 				return redirect(url_for('reader_book', id = id))
-		return render_template('reader_book.html', book = book, reader = reader, error = error)
+	return render_template('reader_book.html', book = book, reader = reader, error = error)
 
 @app.route('/reader/histroy', methods=['GET', 'POST'])
 def reader_histroy():
@@ -380,7 +380,4 @@ def reader_histroy():
 
 if __name__ == '__main__':
 	init_db()
-	app.run(debug=True)
-
-
-
+	app.run(debug=True, host='0.0.0.0', port=5003)
